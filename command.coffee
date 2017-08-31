@@ -34,6 +34,7 @@ class Command
       serviceUrl:      process.env.ENDO_HACKSTER_SERVICE_URL
       userDeviceManagerUrl: process.env.ENDO_HACKSTER_MANAGER_URL
       staticSchemasPath: process.env.ENDO_HACKSTER_STATIC_SCHEMAS_PATH
+      healthcheckService: healthcheck: (callback) => callback(null, healthy: true)
     }
 
   run: =>

@@ -1,0 +1,8 @@
+{
+  angular: [
+    'data.per_page'
+    'data.page'
+    'data.status'
+    'data.by'
+  ]
+}

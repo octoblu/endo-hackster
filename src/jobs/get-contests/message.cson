@@ -1,0 +1,32 @@
+{
+  type: 'object'
+  title: "Get Contests"
+  'x-group-name': 'Contests'
+  properties:
+    data:
+      type: 'object'
+      properties:
+        per_page:
+          type: 'number'
+          title: 'Per Page'
+        page:
+          type: 'number'
+          title: 'Page'
+        status:
+          type: 'string'
+          title: 'Status'
+          enum: [
+            'pre_registration'
+            'in_progress'
+            'judging'
+            'judged'
+          ]
+        by:
+          type: 'string'
+          title: 'Sory By'
+          enum: [
+            'ends_first'
+            'ends_last'
+            'starts_first'
+          ]
+}

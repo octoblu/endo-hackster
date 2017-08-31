@@ -1,0 +1,37 @@
+{
+  type: 'object'
+  title: "Get Channels"
+  'x-group-name': 'Channels'
+  properties:
+    data:
+      type: 'object'
+      properties:
+        per_page:
+          type: 'number'
+          title: 'Per Page'
+        page:
+          type: 'number'
+          title: 'Page'
+        sort:
+          type: 'string'
+          title: 'Sort'
+          enum: [
+            'alpha'
+            'owned'
+            'used'
+          ]
+        type:
+          type: 'string'
+          title: 'Type'
+          enum: [
+            'hardware'
+            'software'
+            'tool'
+          ]
+        q:
+          type: 'string'
+          title: 'Query'
+        approved:
+          type: 'boolean'
+          title: 'Approved'
+}
