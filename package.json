@@ -19,13 +19,13 @@
     "test": "mocha"
   },
   "devDependencies": {
+    "@octoblu/shmock": "^0.7.2",
     "chai": "^3.5.0",
     "istanbul": "^0.4.0",
     "mocha": "^2.3.4",
     "mocha-istanbul": "^0.2.0",
     "passport-strategy": "^1.0.0",
     "request": "^2.66.0",
-    "@octoblu/shmock": "^0.7.2",
     "sinon": "^1.17.2",
     "sinon-chai": "^2.8.0"
   },
@@ -44,9 +44,11 @@
     "express-send-error": "^1.1.0",
     "fs-cson": "^0.3.2",
     "jsonschema": "^1.1.0",
+    "jwt-decode": "^2.2.0",
     "lodash": "^4.11.1",
     "meshblu-config": "^4.0.0",
     "meshblu-encryption": "^1.0.3",
+    "moment": "^2.18.1",
     "morgan": "^1.6.1",
     "passport": "^0.3.2",
     "passport-hackster": "^1.0.2",

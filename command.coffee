@@ -1,10 +1,11 @@
-_               = require 'lodash'
-MeshbluConfig   = require 'meshblu-config'
-path            = require 'path'
-Endo            = require 'endo-core'
-OctobluStrategy = require 'endo-core/octoblu-strategy'
-MessageHandler  = require 'endo-core/message-handler'
-ApiStrategy     = require './src/api-strategy'
+_                   = require 'lodash'
+MeshbluConfig       = require 'meshblu-config'
+path                = require 'path'
+Endo                = require 'endo-core'
+OctobluStrategy     = require 'endo-core/octoblu-strategy'
+MessageHandler      = require 'endo-core/message-handler'
+ApiStrategy         = require './src/api-strategy'
+RefreshTokenHandler = require './src/refreshTokenHandler'
 
 MISSING_SERVICE_URL = 'Missing required environment variable: ENDO_HACKSTER_SERVICE_URL'
 MISSING_MANAGER_URL = 'Missing required environment variable: ENDO_HACKSTER_MANAGER_URL'
@@ -16,9 +17,10 @@ class Command
     throw new Error MISSING_MANAGER_URL if _.isEmpty process.env.ENDO_HACKSTER_MANAGER_URL
     throw new Error MISSING_APP_OCTOBLU_HOST if _.isEmpty process.env.APP_OCTOBLU_HOST
 
-    meshbluConfig   = new MeshbluConfig().toJSON()
-    apiStrategy     = new ApiStrategy process.env
-    octobluStrategy = new OctobluStrategy process.env, meshbluConfig
+    meshbluConfig       = new MeshbluConfig().toJSON()
+    apiStrategy         = new ApiStrategy process.env
+    octobluStrategy     = new OctobluStrategy process.env, meshbluConfig
+    refreshTokenHandler = new RefreshTokenHandler
 
     jobsPath = path.join __dirname, 'src/jobs'
 
@@ -35,6 +37,7 @@ class Command
       userDeviceManagerUrl: process.env.ENDO_HACKSTER_MANAGER_URL
       staticSchemasPath: process.env.ENDO_HACKSTER_STATIC_SCHEMAS_PATH
       healthcheckService: healthcheck: (callback) => callback(null, healthy: true)
+      refreshTokenHandler: refreshTokenHandler
     }
 
   run: =>

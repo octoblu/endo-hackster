@@ -5,7 +5,8 @@ HacksterRequest = require '../../hackster-request'
 class GetContests
   constructor: ({@encrypted}) ->
     accessToken =  @encrypted.secrets.credentials.secret
-    @hackster = new HacksterRequest {accessToken}
+    @hackster = new HacksterRequest
+    @hackster.setToken accessToken
 
   do: ({data}, callback) =>
     # return callback @_userError(422, 'data.question_id is required') unless data.question_id?

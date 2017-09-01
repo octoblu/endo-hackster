@@ -1,8 +1,12 @@
 request = require 'request'
 
 class HacksterRequest
-  constructor: ({accessToken}) ->
+  constructor: () ->
     @base_uri = 'https://api.hackster.io/v2/'
+    @clientID = process.env.ENDO_HACKSTER_HACKSTER_CLIENT_ID
+    @clientSecret = process.env.ENDO_HACKSTER_HACKSTER_CLIENT_SECRET
+
+  setToken: (accessToken) =>
     @access_token = accessToken if accessToken?
 
   request: (method, path, qs, body, callback) =>
@@ -20,15 +24,16 @@ class HacksterRequest
     request options, (error, res, body) =>
       callback error, body
 
-  refreshToken: (refreshToken, clientId, clientSecret, callback) =>
+  refreshToken: (refreshToken, callback) =>
+
     options = {
       uri: 'https://www.hackster.io/oauth/token'
       method: 'POST'
       json: true
       qs:
         refresh_token: refreshToken
-        client_id: clientId
-        client_secret: clientSecret
+        client_id: @clientID
+        client_secret: @clientSecret
         grant_type: 'refresh_token'
     }
 
