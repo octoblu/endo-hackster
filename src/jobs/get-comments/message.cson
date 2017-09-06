@@ -1,0 +1,12 @@
+{
+  type: 'object'
+  title: "List Project Comments"
+  'x-group-name': 'Comments'
+  properties:
+    data:
+      type: 'object'
+      properties:
+        projectId:
+          type: 'string'
+          title: 'Project ID'
+}

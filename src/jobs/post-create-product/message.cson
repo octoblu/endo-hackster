@@ -1,0 +1,50 @@
+{
+  type: 'object'
+  title: "Create Product"
+  'x-group-name': 'Products'
+  properties:
+    data:
+      type: 'object'
+      properties:
+        name:
+          type: 'string'
+          title: 'Name'
+        one_liner:
+          type: 'string'
+        store_link:
+          type: 'string'
+        product_page_link:
+          type: 'string'
+        type:
+          type: 'string'
+          title: 'Type'
+          enum: [
+            'hardware'
+            'software'
+            'tool'
+          ]
+        image_id:
+          type: 'number'
+        platform_id:
+          type: 'number'
+        unit_price:
+          type: 'number'
+        mpn:
+          type: 'string'
+        get_started_link:
+          type: 'string'
+        documentation:
+          type: 'string'
+        libraries_link:
+          type: 'string'
+        datasheet_link:
+          type: 'string'
+        description_html:
+          type: 'string'
+        tags:
+          type: 'array'
+          items:
+            type: 'string'
+        private:
+          type: 'boolean'
+}

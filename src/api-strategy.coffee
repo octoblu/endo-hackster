@@ -11,6 +11,7 @@ class HacksterStrategy extends PassportHackster
       clientID:     process.env.ENDO_HACKSTER_HACKSTER_CLIENT_ID
       clientSecret: process.env.ENDO_HACKSTER_HACKSTER_CLIENT_SECRET
       callbackURL:  process.env.ENDO_HACKSTER_HACKSTER_CALLBACK_URL
+      scope: 'add_to_toolbox bookmark comment follow profile read_private_project respect write_project'
     }
 
     super options, @onAuthorization

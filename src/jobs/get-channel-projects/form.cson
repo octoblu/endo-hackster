@@ -1,0 +1,12 @@
+{
+  angular: [
+    'data.channelId'
+    'data.per_page'
+    'data.page'
+    'data.sort'
+    'data.by'
+    'data.show_all'
+    'data.type'
+    'data.difficulty'
+  ]
+}

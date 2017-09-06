@@ -1,0 +1,12 @@
+{
+  type: 'object'
+  title: "Get Channel Details"
+  'x-group-name': 'Channels'
+  properties:
+    data:
+      type: 'object'
+      properties:
+        channelId:
+          type: 'string'
+          title: 'Channel ID'
+}

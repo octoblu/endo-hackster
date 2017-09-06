@@ -1,0 +1,5 @@
+{
+  type: 'object'
+  title: "Get Authenticated User"
+  'x-group-name': 'Users'
+}

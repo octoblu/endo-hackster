@@ -1,0 +1,12 @@
+{
+  type: 'object'
+  title: "Create Bookmark List"
+  'x-group-name': 'Bookmarks'
+  properties:
+    data:
+      type: 'object'
+      properties:
+        name:
+          type: 'string'
+          title: 'Name'
+}

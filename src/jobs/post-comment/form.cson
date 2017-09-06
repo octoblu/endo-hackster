@@ -1,0 +1,6 @@
+{
+  angular: [
+    'data.projectId'
+    'data.md_body'
+  ]
+}

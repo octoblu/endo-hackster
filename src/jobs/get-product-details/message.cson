@@ -1,0 +1,12 @@
+{
+  type: 'object'
+  title: "Get Product Details"
+  'x-group-name': 'Products'
+  properties:
+    data:
+      type: 'object'
+      properties:
+        productId:
+          type: 'string'
+          title: 'Product ID'
+}

@@ -1,0 +1,12 @@
+{
+  type: 'object'
+  title: "Get User"
+  'x-group-name': 'Users'
+  properties:
+    data:
+      type: 'object'
+      properties:
+        userId:
+          type: 'string'
+          title: 'User ID'
+}

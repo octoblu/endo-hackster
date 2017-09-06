@@ -1,0 +1,12 @@
+{
+  type: 'object'
+  title: "Respect A Project"
+  'x-group-name': 'Projects'
+  properties:
+    data:
+      type: 'object'
+      properties:
+        projectId:
+          type: 'string'
+          title: 'Project ID'
+}

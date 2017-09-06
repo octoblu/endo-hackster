@@ -1,0 +1,16 @@
+{
+  type: 'object'
+  title: "Post Comment"
+  'x-group-name': 'Comments'
+  properties:
+    data:
+      type: 'object'
+      properties:
+        projectId:
+          type: 'string'
+          title: 'Project ID'
+        md_body:
+          type: 'string'
+          title: 'Body'
+          description: 'The comment of the body, in plain text or Markdown-formatted.'
+}

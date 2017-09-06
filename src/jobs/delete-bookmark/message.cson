@@ -1,0 +1,15 @@
+{
+  type: 'object'
+  title: "Remove Project from List"
+  'x-group-name': 'Bookmarks'
+  properties:
+    data:
+      type: 'object'
+      properties:
+        listId:
+          type: 'string'
+          title: 'List ID'
+        projectId:
+          type: 'string'
+          title: 'Project ID'
+}

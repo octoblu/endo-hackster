@@ -1,0 +1,12 @@
+{
+  type: 'object'
+  title: "Get Project Details"
+  'x-group-name': 'Projects'
+  properties:
+    data:
+      type: 'object'
+      properties:
+        projectHid:
+          type: 'string'
+          title: 'Project ID'
+}

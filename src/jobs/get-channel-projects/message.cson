@@ -1,0 +1,63 @@
+{
+  type: 'object'
+  title: "Get Channel Projects"
+  'x-group-name': 'Channels'
+  properties:
+    data:
+      type: 'object'
+      properties:
+        channelId:
+          type: 'string'
+          title: 'Channel ID'
+        per_page:
+          type: 'number'
+          title: 'Per Page'
+        page:
+          type: 'number'
+          title: 'Page'
+        sort:
+          type: 'string'
+          title: 'Sort'
+          enum: [
+            'popular'
+            'recent'
+            'respected'
+            'trending'
+            'updated'
+          ]
+        by:
+          type: 'string'
+          title: 'By'
+          enum: [
+            '7days'
+            '30 days'
+            '1 year'
+            'featured'
+            'on_hackster'
+            'toolbox'
+            'me'
+          ]
+        show_all:
+          type: 'boolean'
+          title: 'Show All'
+        type:
+          type: 'string'
+          title: 'Type'
+          enum: [
+            'tutorial'
+            'wip'
+            'getting_started'
+            'protip'
+            'showcase'
+            'teardown'
+          ]
+        difficulty:
+          type: 'string'
+          title: 'Difficulty'
+          enum: [
+            'beginner'
+            'intermediate'
+            'advanced'
+            'hardcore'
+          ]
+}

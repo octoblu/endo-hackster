@@ -1,0 +1,6 @@
+{
+  angular: [
+    'data.listId'
+    'data.projectId'
+  ]
+}
