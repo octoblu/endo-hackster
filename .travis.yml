@@ -1,9 +1,12 @@
 language: node_js
 node_js:
-  - '5'
+  - '8'
 notifications:
   webhooks:
     - 'https://beekeeper.octoblu.com/webhooks/travis:ci'
+branches:
+  only:
+    - '/^v[0-9]/'
 after_success:
   - npm run coverage
   - 'npm run mocha:json'
