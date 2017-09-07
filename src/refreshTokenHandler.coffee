@@ -7,6 +7,8 @@ class RefreshTokenHandler
     @hackster = new HacksterRequest
 
   isTokenValid: ({credentials}, callback) =>
+    return callback @_userError 'Missing credentials, please re-auth', 500 unless credentials.secret?
+
     decoded = jwtDecode credentials.secret
     { exp } = decoded
     now = moment().utc()
@@ -24,6 +26,11 @@ class RefreshTokenHandler
       }
       secrets.credentials = credentials
       return callback null, secrets
+
+  _userError: (code, message) =>
+    error = new Error message
+    error.code = code
+    return error
 
 
 module.exports = RefreshTokenHandler
