@@ -9,10 +9,13 @@ class GetBookmarkLists
     @hackster.setToken accessToken
 
   do: ({data}, callback) =>
-  
-    path = "lists"
 
-    @hackster.request 'GET', path, null, null, (error, body) =>
+    path = "lists"
+    qs = {}
+    if data?
+      qs.project_id = data.project_id if data.project_id?
+
+    @hackster.request 'GET', path, qs, null, (error, body) =>
       return callback error if error?
       return callback null, {
         metadata:

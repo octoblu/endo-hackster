@@ -13,13 +13,14 @@ class GetChannels
 
     path = 'channels'
     qs = {}
+
     if data?
       qs.per_page = data.per_page if data.per_page?
       qs.page = data.page if data.page?
-      qs.sort = data['sort'] if data['sort']?
+      qs.sort = data['sort'] unless data.q?
       qs.type = data.type if data.type?
       qs.q = data.q if data.q?
-      qs.approved = data.approved if data.approved?
+      qs.approved = data.approved unless data.q?
 
     @hackster.request 'GET', path, qs, null, (error, body) =>
       return callback error if error?

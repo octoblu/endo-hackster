@@ -2,4 +2,12 @@
   type: 'object'
   title: "Get Bookmark Lists"
   'x-group-name': 'Bookmarks'
+  properties:
+    data:
+      type: 'object'
+      properties:
+        project_id:
+          title: 'Project Id'
+          description: 'Optional. If given, an additional field describing whether the list contains the project will be added.'
+          type: 'string'
 }

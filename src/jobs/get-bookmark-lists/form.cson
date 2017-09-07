@@ -1,3 +1,5 @@
 {
-  angular: []
+  angular: [
+    'data.project_id'
+  ]
 }
